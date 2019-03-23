@@ -22,13 +22,13 @@
 <body>
 	<div class="container-fluid">
 		<div class='row'>
-			<div class="navbar-header col-md-7">
+			<div class="navbar-header col-md-6">
 				<a class="navbar-brand inline-grid p-t-10" href="{{asset('/')}}">
 					<strong>Pushap Saini</strong>
 					<span class="f-10">An Interactive Developer With Passion Of Creativity</span>
 				</a>
 			</div>
-			<ul class="nav navbar-nav col-md-5">
+			<ul class="nav navbar-nav col-md-6">
 				<li>
 					<a href='../'>Home</a>
 				</li>
@@ -47,15 +47,25 @@
 				<li>
 					<a href='#contact'>Contact</a>
 				</li>
+				@if(\Auth::check())
+					<li>
+						<a href="{{asset('admin')}}"">Admin</a>
+					</li>
+				@else
+					<li>
+						<a href="{{route('login')}}"">Login</a>
+					</li>
+				@endif
 			</ul>
 		</div>
 		<div class="row img-container">
-			<img class="front-bg" src="{{asset('images/front_bg.jpg')}}">
+			<img class="front-bg" src="{{asset('images/edu44.jpg')}}">
 <!-- 			<div class="img-container-content">
 				An Interactive Developer With Passion Of Creativity
 			</div> -->
 		</div>
 		<!-- <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="pushap-saini-82598311b"></div> -->
+		@include('layouts.footer')
 	</div>
 </body>
 </html>
