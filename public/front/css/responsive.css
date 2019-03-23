@@ -1,0 +1,10 @@
+@media only screen and (max-width: 1024px) {
+	.nav>li>a {
+		padding: 10px 10px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.nav>li>a {
+		padding: 10px 40px;
+	}
+}

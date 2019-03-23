@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Pushap Saini</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,25 +15,17 @@
 
 	<!-- LinkedIn Profile Link -->
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+	<link rel="stylesheet" href="{{asset('front/css/index.css')}}">
+	<link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
 
-	<style>
-		a {
-			text-decoration: none;
-			color: black;
-		}
-		a:hover {
-			text-decoration: none;
-		}
-	</style>
 </head>
 <body>
 	<div class="container-fluid">
-		<div class='row' style='padding-bottom:10px;'>
+		<div class='row'>
 			<div class="navbar-header col-md-7">
-				<a class="navbar-brand" href="../">
-					<b>Pushap Saini</b>
-					<br>
-					<span style='font-size:13px;'>Web Developer</span>
+				<a class="navbar-brand inline-grid p-t-10" href="{{asset('/')}}">
+					<strong>Pushap Saini</strong>
+					<span class="f-10">An Interactive Developer With Passion Of Creativity</span>
 				</a>
 			</div>
 			<ul class="nav navbar-nav col-md-5">
@@ -57,7 +49,13 @@
 				</li>
 			</ul>
 		</div>
-		<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="pushap-saini-82598311b"></div>
+		<div class="row img-container">
+			<img class="front-bg" src="{{asset('images/front_bg.jpg')}}">
+<!-- 			<div class="img-container-content">
+				An Interactive Developer With Passion Of Creativity
+			</div> -->
+		</div>
+		<!-- <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="pushap-saini-82598311b"></div> -->
 	</div>
 </body>
 </html>
