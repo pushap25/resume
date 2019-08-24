@@ -1,0 +1,98 @@
+html, body {
+	overflow-x: hidden;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+.inline-grid {
+	display: inline-grid;
+}
+.img-container {
+	position: relative;
+	text-align: center;
+	color: #fff;
+}
+.img-container-content {
+	position: absolute;
+	top: 52%;
+	left: 53%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.front-bg {
+	width: 100%;
+	opacity: .8;
+	height: 100%;
+	position: fixed;
+	background-image: url('../../images/edu44.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.nav>li>a {
+	height: 50px;
+}
+.hid {
+	display: inline-block;
+    margin: 35px 1%;
+    float: left;
+    width: 14.6%;
+    background:grey;
+	opacity: .7;
+    background-image:url('../../images/Transparent.png');
+    height: 85%;
+}
+
+.rotater {
+	width: 600%;
+	height: 80%;
+}
+
+/* Footer CSS*/
+.footer {
+	position: fixed;
+	left: 0;
+	padding:22px 0px;
+	bottom: 0;
+	width: 100%;
+	background: white;
+	opacity: .9;
+    /*background-image:url('../../images/Transparent.png');*/
+    text-align: center;
+}
+.footer .center {
+	line-height: 30px;
+	color:black;
+}
+
+/* General CSS */
+.p-l-10 {
+	padding-left: 10px;
+}
+.p-r-10 {
+	padding-right: 10px;
+}
+.p-t-10 {
+	padding-top: 10px;
+}
+.p-b-10 {
+	padding-bottom: 10px;
+}
+.m-l-10 {
+	margin-left: 10px;
+}
+.m-r-10 {
+	margin-right: 10px;
+}
+.m-t-10 {
+	margin-top: 10px;
+}
+.m-b-10 {
+	margin-bottom: 10px;
+}
+.f-10 {
+	font-size: 10px;
+}
