@@ -64,6 +64,8 @@
 			e.preventDefault();
 			$('input[type="text"], textarea[type="text"]').css('border','0px');
 			$('#return-msg').html('');
+			$('#ajaxSubmit').attr('disabled','true');
+			$('html, body').css('cursor','wait');
 			$.ajaxSetup({
 				headers: {
 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -74,6 +76,8 @@
 				method: 'post',
 				data: $('#msg-form').serialize(),
 				success: function(result){
+					$('#ajaxSubmit').removeAttr('disabled');
+					$('html, body').css('cursor','default');
 					if(result.result == 'error'){
 						for(i=0;i<result.errors.length;i++){
 							if (result.errors[i] == 'message')
@@ -81,6 +85,7 @@
 							else
 								$('input[name="'+result.errors[i]+'"]').css('border','2px solid red');
 						}
+						$('#return-msg').css('color','red');
 						$('#return-msg').html(result.message);
 					}else{
 						$('input[type="text"], textarea[type="text"]').val('');

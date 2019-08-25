@@ -2,7 +2,7 @@
 <head>
 	<style type="text/css">
 		div {
-			margin: 60px 20px;
+			margin: 30px 10px;
 		}
 		.header {
 			margin-top: 0px;
@@ -20,7 +20,7 @@
 		<p>Name: {{ $name }}</p>
 		<p>Email: {{ $email }}</p>
 		<p>Subject: {{ $subject }}</p>
-		<p>Message: {{ $message }}</p>
+		<p>Message: {{ $qmessage }}</p>
 	</div>
 	<div class=''>
 		<p>Regards,</p>

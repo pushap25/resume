@@ -57,8 +57,8 @@ class ContactsController extends Controller
                             'umessage'=> 'You have got a new message. Please find the details below:',
                             'name'=>$message->name,
                             'email'=>$message->email,
-                            'message'=>$message->message,
-                            'subject'=>$message->subject
+                            'subject'=>$message->subject,
+                            'qmessage'=>$message->message
                         );
 
             \Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
@@ -75,7 +75,7 @@ class ContactsController extends Controller
                             'name'=>$message->name,
                             'email'=>$message->email,
                             'subject'=>$message->subject,
-                            'message'=>$message->message
+                            'qmessage'=>$message->message
                         );
             \Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
                 $message->to($to_email, $to_name)
