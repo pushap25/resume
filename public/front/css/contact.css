@@ -1,22 +1,6 @@
 .contact {
     font-family: Georgia, serif;
 }
-.section-header {
-	margin:0px;
-	text-align: center;
-	cursor: default;
-}
-.section-content {
-	display: inline-flex;
-	width:100%;
-    margin: 20px 0px;
-}
-.section-desc {
-	text-align: center;
-}
-.section-desc span {
-    display: block;
-}
 .section-content .section-left {
 	text-align: center;
 	padding:50px 0px;

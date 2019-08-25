@@ -41,6 +41,14 @@ class ProjectSkillTableSeeder extends Seeder
                 'skill_id' => 7
             ],
             [
+                'project_id' => 2,
+                'skill_id' => 10
+            ],
+            [
+                'project_id' => 2,
+                'skill_id' => 11
+            ],
+            [
                 'project_id' => 3,
                 'skill_id' => 3
             ],
@@ -71,6 +79,14 @@ class ProjectSkillTableSeeder extends Seeder
             [
                 'project_id' => 7,
                 'skill_id' => 7
+            ],
+            [
+                'project_id' => 7,
+                'skill_id' => 10
+            ],
+            [
+                'project_id' => 7,
+                'skill_id' => 11
             ]
         ]);
     }

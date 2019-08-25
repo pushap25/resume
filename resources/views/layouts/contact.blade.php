@@ -41,21 +41,18 @@
 		</div>
 	</div>
 	<div class="section-right">
-      <form action="include/message.php" method="POST">
+      <form method="POST">
         <div>
-          <input class="name" type="text" name="name" placeholder="Name" onblur="addname(this)" required>
-          <input class="email" type="text" name="email" placeholder="Email" onblur="validateEmail(this)" required>
+          <input class="name" type="text" name="name" placeholder="Name">
+          <input class="email" type="text" name="email" placeholder="Email">
           <div class="error" id="error"></div>
         </div>
-        <input class="subject" type="text" name="subject" placeholder="Subject" onblur="addsubject(this)" required>
-        <textarea class="message" type="text" name="message" placeholder="Message" onblur="addmessage(this)" required></textarea>
-        <div class="sent" id="sent">Message Sent Successfully!!!</div>
-        <input class="send" type="submit" name="send" onclick="send()" value="SEND">
+        <input class="subject" type="text" name="subject" placeholder="Subject">
+        <textarea class="message" type="text" name="message" placeholder="Message"></textarea>
+        @if(isset($email))
+	        <div class="sent" id="sent">Message Sent Successfully!!!</div>
+	    @endif
+        <input class="send" type="submit" name="send" value="SEND">
       </form>
-      <?php if(isset($_GET['email'])){ ?>
-      <script>
-        document.getElementById("sent").style.display="block";
-      </script>
-      <?php } ?>
 	</div>
 </div>

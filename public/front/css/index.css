@@ -50,40 +50,8 @@ a.header:hover, a.header:focus {
 .navbar-inverse .navbar-toggle:hover .icon-bar{
 	background-color: #fff!important;
 }
-.img-container-content {
-	position: absolute;
-	top: 52%;
-	left: 53%;
-	transform: translate(-50%, -50%);
-	font-size: 20px;
-	text-transform: uppercase;
-}
-.front-bg {
-	width: 100%;
-	opacity: .8;
-	height: 100%;
-	position: fixed;
-	background-image: url('../../images/edu44.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-}
 .nav>li>a {
 	height: 50px;
-}
-.hid {
-	display: inline-block;
-    margin: 35px 1%;
-    float: left;
-    width: 14.6%;
-    background:grey;
-	opacity: .95;
-    background-image:url('../../images/Transparent.png');
-}
-
-.rotater {
-	width: 600%;
-	height: 80%;
-	overflow-y: scroll;
 }
 
 /* Footer CSS*/
@@ -130,4 +98,55 @@ a.header:hover, a.header:focus {
 }
 .f-10 {
 	font-size: 10px;
+}
+
+/*Custom CSS*/
+.img-container-content {
+	position: absolute;
+	top: 52%;
+	left: 53%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.front-bg {
+	width: 100%;
+	opacity: .8;
+	height: 100%;
+	position: fixed;
+	background-image: url('../../images/edu44.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.hid {
+	display: inline-block;
+    margin: 35px 1%;
+    float: left;
+    width: 14.6%;
+    background:grey;
+	opacity: .95;
+    background-image:url('../../images/Transparent.png');
+}
+.rotater {
+	width: 600%;
+	height: 80%;
+	overflow-y: scroll;
+}
+
+/*Common CSS*/
+.section-header {
+	margin:0px;
+	text-align: center;
+	cursor: default;
+}
+.section-content {
+	display: inline-flex;
+	width:100%;
+    margin: 20px 0px;
+}
+.section-desc {
+	text-align: center;
+}
+.section-desc span {
+    display: block;
 }

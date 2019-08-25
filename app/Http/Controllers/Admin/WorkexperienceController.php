@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers;
 
-use App\Models\Skills;
+use App\Models\Workexperience;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class SkillsController extends Controller
+class WorkexperienceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class SkillsController extends Controller
      */
     public function index()
     {
-        $skills = \DB::select('select * from skills');
-        return $skills;
+        //
     }
 
     /**
@@ -43,10 +41,10 @@ class SkillsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Skills  $skills
+     * @param  \App\Workexperience  $workexperience
      * @return \Illuminate\Http\Response
      */
-    public function show(Skills $skills)
+    public function show(Workexperience $workexperience)
     {
         //
     }
@@ -54,10 +52,10 @@ class SkillsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Skills  $skills
+     * @param  \App\Workexperience  $workexperience
      * @return \Illuminate\Http\Response
      */
-    public function edit(Skills $skills)
+    public function edit(Workexperience $workexperience)
     {
         //
     }
@@ -66,10 +64,10 @@ class SkillsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Skills  $skills
+     * @param  \App\Workexperience  $workexperience
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Skills $skills)
+    public function update(Request $request, Workexperience $workexperience)
     {
         //
     }
@@ -77,10 +75,10 @@ class SkillsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Skills  $skills
+     * @param  \App\Workexperience  $workexperience
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Skills $skills)
+    public function destroy(Workexperience $workexperience)
     {
         //
     }

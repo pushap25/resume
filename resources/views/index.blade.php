@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 	<link rel="stylesheet" href="{{asset('front/css/index.css')}}">
+	<link rel="stylesheet" href="{{asset('front/css/skills.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/contact.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
 
@@ -37,7 +38,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav nav-list">
-					<li><a class='header' href="{{asset('/')}}">Home</a></li>
+					<li>
+						<a class='header' href="#home">Home</a>
+					</li>
 					<li>
 						<a class='header' href='#work'>Work</a>
 					</li>
@@ -114,7 +117,7 @@
 					<div id="work" class="hid">@include('layouts.work')</div>
 					<div id="projects" class="hid">@include('layouts.projects')</div>
 					<div id="academics" class="hid">@include('layouts.academics')</div>
-					<div id="skills" class="hid">@include('layouts.skills')</div>
+					<div id="skills" class="skills hid">@include('layouts.skills')</div>
  					<div id="contact" class="contact hid">@include('layouts.contact')</div>
 				</div>
 			</div>
@@ -128,7 +131,32 @@
 	</div>
 <script type="text/javascript">
 	$(document).ready(function(){
-
+		$.ajax({
+			url: "{{ url('/skills') }}",
+			method: 'get',
+			// data: {
+			// 	name: jQuery('#name').val(),
+			// 	type: jQuery('#type').val(),
+			// 	price: jQuery('#price').val()
+			// },
+			success: function(result){
+				for(k=0;k<result.length;k++) {
+					console.log(result[k]);
+					$('#skill_list').append(`<div class="skills"><div class="skill">
+												<div class="topic">
+											        <div class="skill_center">
+											          <div class="skill2">
+											            <div class="topic2">
+												            <div class="content">`
+												            +result[k].name+
+												            `</div>
+											            </div>
+											          </div>
+											        </div>
+											      </div>
+											    </div></div>`);
+				}
+		}});
 		$('a[href^="#"]').click(function(){
 			event.preventDefault();
 			var bar_clicked=$(this).attr('href');

@@ -37,7 +37,7 @@ class SkillsTableSeeder extends Seeder
 	            'description' => 'The most used languages for front end development.Being a full stack developer I love to develop the front end on my own. So I love working with these programming languages too.',
 	        ],
         	[
-	            'name' => 'JavaScript , jQuery & AJAX',
+	            'name' => 'JavaScript',
 	            'description' => 'I have used these in all of my web based projects.',
 	        ],
         	[
@@ -47,6 +47,14 @@ class SkillsTableSeeder extends Seeder
         	[
 	            'title' => 'C , C++ & JAVA',
 	            'description' => 'These are the programming language I started my programming journey with. C was the very first programming language I learn\'t in college. I have built tons of small projects using these languages. May that be for fun or helping out my friends.',
+	        ],
+        	[
+	            'name' => 'jQuery',
+	            'description' => 'I have used these in all of my web based projects.',
+	        ],
+        	[
+	            'name' => 'AJAX',
+	            'description' => 'I have used these in all of my web based projects.',
 	        ]
         ]);
     }

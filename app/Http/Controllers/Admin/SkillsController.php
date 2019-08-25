@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Workexperience;
+use App\Models\Skills;
 use Illuminate\Http\Request;
 
-class WorkexperienceController extends Controller
+class SkillsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class WorkexperienceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Workexperience  $workexperience
+     * @param  \App\Skills  $skills
      * @return \Illuminate\Http\Response
      */
-    public function show(Workexperience $workexperience)
+    public function show(Skills $skills)
     {
         //
     }
@@ -52,10 +52,10 @@ class WorkexperienceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Workexperience  $workexperience
+     * @param  \App\Skills  $skills
      * @return \Illuminate\Http\Response
      */
-    public function edit(Workexperience $workexperience)
+    public function edit(Skills $skills)
     {
         //
     }
@@ -64,10 +64,10 @@ class WorkexperienceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Workexperience  $workexperience
+     * @param  \App\Skills  $skills
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Workexperience $workexperience)
+    public function update(Request $request, Skills $skills)
     {
         //
     }
@@ -75,10 +75,10 @@ class WorkexperienceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Workexperience  $workexperience
+     * @param  \App\Skills  $skills
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Workexperience $workexperience)
+    public function destroy(Skills $skills)
     {
         //
     }
