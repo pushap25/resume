@@ -8,8 +8,39 @@
 		padding: 10px 40px;
 	}
 }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1080px) {
 	.section-content .section-right form input {
 		width: 100%;
+	}
+	.section-content .section-right form input.subject {
+		margin: 15px 0px;
+	}
+}
+@media only screen and (max-width: 520px) {
+	.rotater {
+		overflow-y: scroll;
+	}
+	.skills .skill_list {
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.skills .skill_list .skills {
+		min-height: 220px;
+		width: 80%;
+	}
+	.section-content {
+		display: inline-block;
+		height: 850px;
+	}
+	.section-content .section-left {
+		width: auto;
+		display: block;
+		height: auto;
+	}
+	.section-content .section-right {
+		width: 100%;
+		padding:15px;
+		display: block;
+		height: auto;
 	}
 }

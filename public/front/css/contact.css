@@ -1,6 +1,3 @@
-.contact {
-    font-family: Georgia, serif;
-}
 .section-content .section-left {
 	text-align: center;
 	padding:50px 0px;
@@ -87,6 +84,12 @@
 	padding-right:50px;
 	height:inherit;
 	display: inline-block;
+}
+.section-content .section-right .return-msg {
+    color: red;
+    font-weight: bold;
+    font-size: 17px;
+    float: left;
 }
 .section-content .section-right form input{
 	background-color: #f6f7f8;

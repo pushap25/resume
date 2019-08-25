@@ -17,7 +17,7 @@ class SkillsTableSeeder extends Seeder
 	            'description' => 'This website is developed using Laravel.',
 	        ],
         	[
-	            'title' => 'Core PHP',
+	            'title' => 'PHP',
 	            'description' => 'The previous version of this website was developed using php.',
 	        ],
         	[

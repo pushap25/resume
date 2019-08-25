@@ -41,18 +41,54 @@
 		</div>
 	</div>
 	<div class="section-right">
-      <form method="POST">
+      <form method="POST" id='msg-form'>
         <div>
           <input class="name" type="text" name="name" placeholder="Name">
           <input class="email" type="text" name="email" placeholder="Email">
-          <div class="error" id="error"></div>
         </div>
         <input class="subject" type="text" name="subject" placeholder="Subject">
         <textarea class="message" type="text" name="message" placeholder="Message"></textarea>
-        @if(isset($email))
-	        <div class="sent" id="sent">Message Sent Successfully!!!</div>
-	    @endif
-        <input class="send" type="submit" name="send" value="SEND">
+        <span class="return-msg" id="return-msg"></span>
+        <input class="send" type="submit" id="ajaxSubmit" name="send" value="SEND">
       </form>
 	</div>
 </div>
+<script>
+	$(document).ready(function(){
+		$('input[type="text"], textarea[type="text"]').focusout(function(){
+			console.log($(this).val());
+			if($(this).val() != '')
+				$(this).css('border','0px');
+		});
+		$('#ajaxSubmit').click(function(e){
+			e.preventDefault();
+			$('input[type="text"], textarea[type="text"]').css('border','0px');
+			$('#return-msg').html('');
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			$.ajax({
+				url: "{{ url('/message') }}",
+				method: 'post',
+				data: $('#msg-form').serialize(),
+				success: function(result){
+					if(result.result == 'error'){
+						for(i=0;i<result.errors.length;i++){
+							if (result.errors[i] == 'message')
+								$('textarea[name="'+result.errors[i]+'"]').css('border','2px solid red');
+							else
+								$('input[name="'+result.errors[i]+'"]').css('border','2px solid red');
+						}
+						$('#return-msg').html(result.message);
+					}else{
+						$('input[type="text"], textarea[type="text"]').val('');
+						$('#return-msg').css('color','green');
+						$('#return-msg').html(result.message);
+					}
+				}
+			});
+		});
+	});
+</script>

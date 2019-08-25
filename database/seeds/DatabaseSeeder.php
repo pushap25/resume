@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         	SkillsTableSeeder::class,
         	ProjectsTableSeeder::class,
         	ProjectSkillTableSeeder::class,
-        	ContactTableSeeder::class,
+        	ContactsTableSeeder::class,
             AcademicsTableSeeder::class,
             WorkexperienceTableSeeder::class
         ]);

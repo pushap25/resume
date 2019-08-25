@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-	<title>Pushap Saini</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -25,7 +29,7 @@
 <body>
 	<nav class='navbar navbar-inverse'>
 		<div class="container-fluid">
-			<div class="navbar-header col-md-6">
+			<div class="navbar-header col-md-5">
 				<a class="navbar-brand inline-grid p-t-10 header" href="{{asset('/')}}">
 					<strong>Pushap Saini</strong>
 					<span class="f-10">An Interactive Developer With Passion Of Creativity</span>
@@ -131,6 +135,9 @@
 	</div>
 <script type="text/javascript">
 	$(document).ready(function(){
+
+		$('[data-toggle="tooltip"]').tooltip();
+
 		$.ajax({
 			url: "{{ url('/skills') }}",
 			method: 'get',
@@ -141,20 +148,21 @@
 			// },
 			success: function(result){
 				for(k=0;k<result.length;k++) {
-					console.log(result[k]);
-					$('#skill_list').append(`<div class="skills"><div class="skill">
-												<div class="topic">
-											        <div class="skill_center">
-											          <div class="skill2">
-											            <div class="topic2">
-												            <div class="content">`
-												            +result[k].name+
-												            `</div>
-											            </div>
-											          </div>
-											        </div>
-											      </div>
-											    </div></div>`);
+					$('#skill_list').append(`<div class="skills">
+												<div class="skill" data-toggle="tooltip" title="`+result[k].description+`">
+													<div class="topic">
+												        <div class="skill_center">
+												          	<div class="skill2">
+												            	<div class="topic2">
+													            	<div class="content">`
+													            		+result[k].name+
+													            	`</div>
+													            </div>
+													        </div>
+													    </div>
+													</div>
+												</div>
+										    </div>`);
 				}
 		}});
 		$('a[href^="#"]').click(function(){

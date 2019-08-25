@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ContactTableSeeder extends Seeder
+class ContactsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class ContactTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('contact')->insert([
+        DB::table('contacts')->insert([
         	[
 	            'name' => 'Pushap Saini',
 	            'email' => 'sainipushapal@gmail.com',
