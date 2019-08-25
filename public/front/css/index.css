@@ -15,6 +15,41 @@ a:hover {
 	text-align: center;
 	color: #fff;
 }
+.navbar {
+	margin-bottom: 0px;
+}
+.navbar-inverse {
+	background-color: #fff;
+	border-color: #fff;
+}
+a.header {
+	color: #337ab7!important;
+}
+a.header:hover, a.header:focus {
+	color: #23527c!important;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+	border-color: #337ab7!important;
+}
+.nav-list li:hover, .nav-list li:focus {
+	background-color: #eee;
+}
+.navbar-inverse .navbar-toggle {
+	border-color: #337ab7!important;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+	background-color: #337ab7!important;
+	color: #23527c!important;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+	background-color: #337ab7!important;
+}
+.navbar-inverse .navbar-toggle:focus .icon-bar{
+	background-color: #fff!important;
+}
+.navbar-inverse .navbar-toggle:hover .icon-bar{
+	background-color: #fff!important;
+}
 .img-container-content {
 	position: absolute;
 	top: 52%;
