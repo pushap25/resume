@@ -8,3 +8,8 @@
 		padding: 10px 40px;
 	}
 }
+@media only screen and (max-width: 960px) {
+	.section-content .section-right form input {
+		width: 100%;
+	}
+}

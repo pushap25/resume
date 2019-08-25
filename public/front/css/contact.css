@@ -1,0 +1,178 @@
+.contact {
+    font-family: Georgia, serif;
+}
+.section-header {
+	margin:0px;
+	text-align: center;
+	cursor: default;
+}
+.section-content {
+	display: inline-flex;
+	width:100%;
+    margin: 20px 0px;
+}
+.section-desc {
+	text-align: center;
+}
+.section-desc span {
+    display: block;
+}
+.section-content .section-left {
+	text-align: center;
+	padding:50px 0px;
+   	width:53.7%;
+	height:inherit;
+	display: inline-block;
+}
+.section-content .section-left .social{
+	display:inline-block;
+	vertical-align:top;
+	cursor:pointer;
+    margin:10px;
+}
+.section-content .section-left .fb div{
+	position: absolute;
+    display:inline-block;
+}
+.section-content .section-left .fb .one{
+    display: inline-grid;
+    background-color: #56ccc8;
+    height: 120px;
+    margin: -120px 0px 0px 0px;
+    width: 210px;
+}
+.section-content .section-left .fb .two{
+    display: inline-grid;
+    height: 120px;
+    background-color: #3a5795;
+    width: 210px;
+    transition: margin-top .4s;
+}
+.section-content .section-left .fb .onee{
+    margin: 30px 0px 0px 75px;
+}
+.section-content .section-left .fb .twoo{
+    margin: 30px 0px 0px 75px;
+}
+.section-content .section-left .fb .two:hover{
+	margin-top: 120px;
+}
+.section-content .section-left .fb{
+    display: inline-grid;
+    height: 120px;
+    width: 210px;
+    position: relative;
+    overflow: hidden;
+}
+.section-content .section-left .ln{
+    display: inline-grid;
+    height: 120px;
+    width: 210px;
+    position: relative;
+    overflow: hidden;
+}
+.section-content .section-left .ln div{
+	position: absolute;
+    display:inline-block;
+}
+.section-content .section-left .ln .one{
+    display: inline-grid;
+	background-color: #56ccc8;
+    height: 120px;
+    margin: -120px 0px 0px 0px;
+    width: 210px;
+}
+.section-content .section-left .ln .two{
+    display: inline-grid;
+    height: 120px;
+	background-color: #0077b5;
+    width: 210px;
+    transition: margin-top .4s;
+}
+.section-content .section-left .ln .onee{
+    margin: 40px 0px 0px 85px;
+}
+.section-content .section-left .ln .twoo{
+    margin: 40px 0px 0px 85px;
+}
+.section-content .section-left .ln .two:hover{
+	margin-top: 120px;
+}
+.section-content .section-right {
+	width:46.3%;
+	padding-right:50px;
+	height:inherit;
+	display: inline-block;
+}
+.section-content .section-right form input{
+	background-color: #f6f7f8;
+	border:0px;
+	border-bottom: 1px solid #b5c1c9;
+	padding: 14px;
+    font-size: 14px;
+    width:49.5%;
+    color: #838383;
+    margin:10px 0px;
+}
+.section-content .section-right form .message{
+	background-color: #f6f7f8;
+	border:0px;
+	border-bottom: 1px solid #b5c1c9;
+	padding: 14px;
+    font-size: 14px;
+    width:280px;
+    color: #838383;
+    resize: none;
+	height: 130px;
+	width:100%;
+}
+.section-content .section-right form input.subject{
+	width:100%;
+	margin:20px 0px;
+}
+.section-content .section-right form input.send{
+	margin:20px 0px;
+	float: right;
+	width:70px;
+	font-weight: bolder;
+}
+.section-content .section-right form input.send:hover{
+	background-color: lightgrey;
+	color:#333;
+}
+.section-content .section-right div .error{
+    font-family: "poppins-bold", sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    margin: 0;
+    color: #FFFFFF;
+    background: #FF0077;
+    border-radius: 25px;
+    text-align: center;
+    text-align: -webkit-center;
+    margin-top: 15px;
+    font-weight:500;
+    display: none;
+}
+.section-content .section-right .sent{
+    font-family: "poppins-bold", sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    margin: 0;
+    color: #FFFFFF;
+    background: #FF0077;
+    border-radius: 25px;
+    text-align: center;
+    text-align: -webkit-center;
+    margin-top: 15px;
+    font-weight:500;
+    display: none;
+}

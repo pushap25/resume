@@ -16,6 +16,7 @@
 	<!-- LinkedIn Profile Link -->
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 	<link rel="stylesheet" href="{{asset('front/css/index.css')}}">
+	<link rel="stylesheet" href="{{asset('front/css/contact.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
 
 </head>
@@ -61,12 +62,12 @@
 		<div class="row img-container">
 			<div class="front-bg">
 				<div class="rotater">
-					<div id="home" class="hid">@include('layouts.home')</div>
+<!-- 					<div id="home" class="hid">@include('layouts.home')</div>
 					<div id="work" class="hid">@include('layouts.work')</div>
 					<div id="projects" class="hid">@include('layouts.projects')</div>
 					<div id="academics" class="hid">@include('layouts.academics')</div>
 					<div id="skills" class="hid">@include('layouts.skills')</div>
-					<div id="contact" class="hid">@include('layouts.contact')</div>
+ -->					<div id="contact" class="contact hid">@include('layouts.contact')</div>
 				</div>
 			</div>
 			<!-- <img class="front-bg" src="{{asset('images/edu44.jpg')}}"> -->

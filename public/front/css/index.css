@@ -41,14 +41,14 @@ a:hover {
     float: left;
     width: 14.6%;
     background:grey;
-	opacity: .7;
+	opacity: .95;
     background-image:url('../../images/Transparent.png');
-    height: 85%;
 }
 
 .rotater {
 	width: 600%;
 	height: 80%;
+	overflow-y: scroll;
 }
 
 /* Footer CSS*/
