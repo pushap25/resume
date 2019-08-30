@@ -46,8 +46,14 @@
           <input class="name" type="text" name="name" placeholder="Name">
           <input class="email" type="text" name="email" placeholder="Email">
         </div>
+        <div>
+          <span class="return-msg" id='error-name'></span>
+          <span class="return-msg" id='error-email'></span>
+        </div>
         <input class="subject" type="text" name="subject" placeholder="Subject">
+        <span class="return-msg" id='error-subject'></span>
         <textarea class="message" type="text" name="message" placeholder="Message"></textarea>
+        <span class="return-msg" id='error-message'></span>
         <span class="return-msg" id="return-msg"></span>
         <input class="send" type="submit" id="ajaxSubmit" name="send" value="SEND">
       </form>
@@ -76,14 +82,17 @@
 				method: 'post',
 				data: $('#msg-form').serialize(),
 				success: function(result){
+					console.log(result);
 					$('#ajaxSubmit').removeAttr('disabled');
 					$('html, body').css('cursor','default');
 					if(result.result == 'error'){
-						for(i=0;i<result.errors.length;i++){
-							if (result.errors[i] == 'message')
-								$('textarea[name="'+result.errors[i]+'"]').css('border','2px solid red');
+						console.log(result.errors);
+						for(var i in result.errors) {
+							if (i == 'message')
+								$('textarea[name="'+i+'"]').css('border','2px solid red');
 							else
-								$('input[name="'+result.errors[i]+'"]').css('border','2px solid red');
+								$('input[name="'+i+'"]').css('border','2px solid red');
+							$('#error-'+i).html(result.errors[i]);
 						}
 						$('#return-msg').css('color','red');
 						$('#return-msg').html(result.message);

@@ -2,6 +2,12 @@
 	.nav>li>a {
 		padding: 10px 10px;
 	}
+	.rotater {
+		overflow-y: scroll;
+	}
+	.section-content {
+		min-height: 330px;
+	}
 }
 @media only screen and (max-width: 767px) {
 	.nav>li>a {
@@ -42,5 +48,11 @@
 		padding:15px;
 		display: block;
 		height: auto;
+	}
+}
+@media only screen and (max-width: 350px) {
+	.header {
+	    width: 150px;
+	    overflow: hidden;
 	}
 }

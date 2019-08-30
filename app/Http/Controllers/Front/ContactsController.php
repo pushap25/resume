@@ -36,13 +36,33 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        $contacts = $request->all();
-        $errors = [];
-        foreach ($contacts as $key => $value) {
-            if(is_null($value))
-                array_push($errors, $key);
-        }
-        if(!count($errors)) {
+        $validator = \Validator::make($request->all(),[
+            'name'      =>  'required',
+            'email'     =>  'required|email',
+            'subject'   =>  'required',
+            'message'   =>  'required'
+        // ],[
+        //     'name.required'         =>  trans('validation.name:required'),
+        //     'email.required'        =>  trans('validation.email:required'),
+        //     'subject.required'      =>  trans('validation.subject:required'),
+        //     'message.required'      =>  trans('validation.message:required')
+        ]);
+
+        if($validator->fails()) {
+            return response()->json([
+                'result'=>'error',
+                'message'=>'Please fill above fields first.',
+                'errors'=>$validator->errors()
+            ]);
+        } else {
+
+            $contacts = $request->all();
+        // $errors = [];
+        // foreach ($contacts as $key => $value) {
+        //     if(is_null($value))
+        //         array_push($errors, $key);
+        // }
+        // if(!count($errors)) {
             $message = new Contacts();
             $message->name = $contacts['name'];
             $message->email = $contacts['email'];
@@ -84,8 +104,6 @@ class ContactsController extends Controller
             });
 
             return response()->json(['result'=>'success','message'=>'Message Sent Successfully!!!','errors'=>'']);
-        } else {
-            return response()->json(['result'=>'error','message'=>'Please fill above fields first.','errors'=>$errors]);
         }
     }
 

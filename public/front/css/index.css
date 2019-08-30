@@ -112,7 +112,7 @@ a.header:hover, a.header:focus {
 .front-bg {
 	width: 100%;
 	opacity: .8;
-	height: 100%;
+	height: 92%;
 	position: fixed;
 	background-image: url('../../images/edu44.jpg');
 	background-repeat: no-repeat;

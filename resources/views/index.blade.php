@@ -25,8 +25,15 @@
 	<link rel="stylesheet" href="{{asset('front/css/contact.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
 
+	<script type="text/javascript">
+		function resizeWindow(){
+			event.preventDefault();
+			$('.rotater').animate({marginLeft:0});
+		}
+	</script>
+
 </head>
-<body>
+<body onresize="resizeWindow()">
 	<nav class='navbar navbar-inverse'>
 		<div class="container-fluid">
 			<div class="navbar-header col-md-5">
