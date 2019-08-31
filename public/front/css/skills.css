@@ -1,5 +1,9 @@
 .skill_error {
     display: none;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
 }
 .skills .skill_list {
 	font-family: Georgia, serif;

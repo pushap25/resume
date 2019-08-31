@@ -9,6 +9,6 @@
 </div>
 <div class="section-content skill_list" id="skill_list">
     <div class="skill_error">
-        SKILLS SECTION UNAVAILABLE. SORRY FOR THE INCONVENIENCE!!!
+        skills section unavailable. Sorry for the inconvenience!!!
     </div>
 </div>

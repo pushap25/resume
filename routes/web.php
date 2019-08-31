@@ -25,4 +25,6 @@ Route::get('/register', 'HomeController@index')->name('home');
 
 Route::get('/skills','Front\SkillsController@index')->name('skills');
 
+Route::resource('acads','Front\AcademicsController');
+
 Route::resource('message','Front\ContactsController');

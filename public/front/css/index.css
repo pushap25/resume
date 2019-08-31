@@ -1,5 +1,6 @@
 html, body {
 	overflow-x: hidden;
+	cursor:default;
 }
 a {
 	text-decoration: none;
@@ -98,6 +99,18 @@ a.header:hover, a.header:focus {
 }
 .f-10 {
 	font-size: 10px;
+}
+.w-100 {
+	width: 100%!important;
+}
+.m-t-30 {
+	margin-top: 30px;
+}
+.w-50-p {
+	width: 50%;
+}
+.dsp-inl {
+	display: grid;
 }
 
 /*Custom CSS*/

@@ -87,6 +87,8 @@
 }
 .section-content .section-right .return-msg {
     color: red;
+    width:100%;
+    text-align: left;
     font-weight: bold;
     font-size: 17px;
     float: left;
@@ -97,9 +99,12 @@
 	border-bottom: 1px solid #b5c1c9;
 	padding: 14px;
     font-size: 14px;
-    width:49.5%;
+    width: 100%;
     color: #838383;
     margin:10px 0px;
+}
+.section-content .section-right form table tbody tr:first-child td:first-child {
+    padding-right: 10px;
 }
 .section-content .section-right form .message{
 	background-color: #f6f7f8;
@@ -113,9 +118,9 @@
 	height: 130px;
 	width:100%;
 }
-.section-content .section-right form input.subject{
+.section-content .section-right form input.subject, .section-content .section-right form textarea{
 	width:100%;
-	margin:20px 0px;
+	margin:10px 0px;
 }
 .section-content .section-right form input.send{
 	margin:20px 0px;

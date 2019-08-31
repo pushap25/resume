@@ -44,6 +44,7 @@ class ContactsController extends Controller
         // ],[
         //     'name.required'         =>  trans('validation.name:required'),
         //     'email.required'        =>  trans('validation.email:required'),
+        //     'email.email'           =>  trans('validation.email:email'),
         //     'subject.required'      =>  trans('validation.subject:required'),
         //     'message.required'      =>  trans('validation.message:required')
         ]);

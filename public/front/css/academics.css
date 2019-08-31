@@ -1,0 +1,55 @@
+.acad_error {
+    display: none;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+}
+.acads {
+    overflow: hidden;
+}
+.acad-img {
+    cursor: pointer;
+    width:40%;
+    /*height: 35%;*/
+}
+.acads .acad_list {
+    margin: 0px;
+    display: inline-flex;
+}
+.acads .acad_list .first {
+    width: 100%;
+    display: inline;
+}
+.acads .acad_list .first .acad-title {
+    font-size: 15px;
+    background-image: url("../../images/Transparent.png");
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.acads .acad_list .first .def{
+    background-image: url("../../images/Transparent.png");
+    padding: 15px;
+    margin: 20px 0px;
+}
+/* width */
+.acads .acad_list::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.acads .acad_list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.acads .acad_list::-webkit-scrollbar-thumb {
+  background: tan; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.acads .acad_list::-webkit-scrollbar-thumb:hover {
+  background: #e3ae66; 
+}

@@ -42,29 +42,47 @@
 	</div>
 	<div class="section-right">
       <form method="POST" id='msg-form'>
-        <div>
-          <input class="name" type="text" name="name" placeholder="Name">
-          <input class="email" type="text" name="email" placeholder="Email">
-        </div>
-        <div>
-          <span class="return-msg" id='error-name'></span>
-          <span class="return-msg" id='error-email'></span>
-        </div>
-        <input class="subject" type="text" name="subject" placeholder="Subject">
-        <span class="return-msg" id='error-subject'></span>
-        <textarea class="message" type="text" name="message" placeholder="Message"></textarea>
-        <span class="return-msg" id='error-message'></span>
-        <span class="return-msg" id="return-msg"></span>
-        <input class="send" type="submit" id="ajaxSubmit" name="send" value="SEND">
+      	<table class="w-100">
+      		<tr>
+      			<td class="inl-res">
+					<input class="name" type="text" name="name" placeholder="Name">
+					<span class="return-msg" id='error-name'> </span>
+				</td>
+				<td class="inl-res">
+					<input class="email" type="text" name="email" placeholder="Email">
+					<span class="return-msg" id='error-email'></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input class="subject" type="text" name="subject" placeholder="Subject">
+					<span class="return-msg w-100" id='error-subject'></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<textarea class="message" type="text" name="message" placeholder="Message"></textarea>
+					<span class="return-msg w-100" id='error-message'></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<!-- <span class="return-msg m-t-30" id="return-msg"></span> -->
+					<input class="send" type="submit" id="ajaxSubmit" name="send" value="SEND">
+				</td>
+			</tr>
+		</table>
       </form>
 	</div>
 </div>
 <script>
 	$(document).ready(function(){
 		$('input[type="text"], textarea[type="text"]').focusout(function(){
-			console.log($(this).val());
-			if($(this).val() != '')
+			if($(this).val() != ''){
 				$(this).css('border','0px');
+				$('#error-'+$(this).attr('name')).html('');
+				$('#error-name').css('height','auto');
+			}
 		});
 		$('#ajaxSubmit').click(function(e){
 			e.preventDefault();
@@ -82,12 +100,11 @@
 				method: 'post',
 				data: $('#msg-form').serialize(),
 				success: function(result){
-					console.log(result);
 					$('#ajaxSubmit').removeAttr('disabled');
 					$('html, body').css('cursor','default');
 					if(result.result == 'error'){
-						console.log(result.errors);
 						for(var i in result.errors) {
+							$("input[name='subject'], textarea[name='message']").css('margin-bottom','0px');
 							if (i == 'message')
 								$('textarea[name="'+i+'"]').css('border','2px solid red');
 							else

@@ -22,6 +22,7 @@
 
 	<link rel="stylesheet" href="{{asset('front/css/index.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/skills.css')}}">
+	<link rel="stylesheet" href="{{asset('front/css/academics.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/contact.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
 
@@ -29,6 +30,7 @@
 		function resizeWindow(){
 			event.preventDefault();
 			$('.rotater').animate({marginLeft:0});
+			$('.skills .skill_list').animate({'scrollTop':0});
 		}
 	</script>
 
@@ -127,7 +129,7 @@
  					<div id="home" class="hid">@include('layouts.home')</div>
 					<div id="work" class="hid">@include('layouts.work')</div>
 					<div id="projects" class="hid">@include('layouts.projects')</div>
-					<div id="academics" class="hid">@include('layouts.academics')</div>
+					<div id="academics" class="acads hid">@include('layouts.academics')</div>
 					<div id="skills" class="skills hid">@include('layouts.skills')</div>
  					<div id="contact" class="contact hid">@include('layouts.contact')</div>
 				</div>
@@ -140,8 +142,11 @@
 		<!-- <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="pushap-saini-82598311b"></div> -->
 		@include('layouts.footer')
 	</div>
+<script type="text/javascript" src="{{asset('front/js/index.js')}}"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+
+		window.onload = rotater;
 
 		$('[data-toggle="tooltip"]').tooltip();
 
@@ -171,7 +176,43 @@
 												</div>
 										    </div>`);
 				}
-		}});
+			},
+			error: function(xhr,status,error) {
+				$('.skill_error').show();
+			}
+		});
+
+		$.ajax({
+			url: "{{ url('/acads') }}",
+			method: 'get',
+			// data: {
+			// 	name: jQuery('#name').val(),
+			// 	type: jQuery('#type').val(),
+			// 	price: jQuery('#price').val()
+			// },
+			success: function(rs){
+				result = rs.data;
+				$('#acad_list').attr('count',rs.count);
+				$('#acad_list').css('width',rs.count+'00%');
+				for(k=0;k<result.length;k++) {
+					$('#acad_list').append(`<div class="first" id="acad_slider_`+(k+1)+`">
+												<div class="acad-title">`
+													+result[k].title+
+												`</div>
+												<img class="acad-img" src="`+result[k].images+`" alt="`+result[k].title+`">
+												<div class="def">
+													<span>`
+														+result[k].description+
+													`</span>
+												</div>
+											</div>`);
+				}
+			},
+			error: function(xhr,status,error) {
+				$('.acad_error').show();
+			}
+		});
+
 		$('a[href^="#"]').click(function(){
 			event.preventDefault();
 			var bar_clicked=$(this).attr('href');
@@ -179,10 +220,11 @@
 			// console.log('rotater: '+$('#work').offset().left);
 			// console.log(bar_clicked+': '+ $(bar_clicked).offset().left);
 			var pos=$(bar_clicked).offset().left-$('#home').offset().left;
-			$('.rotater').animate({marginLeft:(-1)*pos});
+			$('.rotater').animate({'scrollTop':0,marginLeft:(-1)*pos});
 			// console.log(pos);
 		});
 	});
+
 
 </script>
 </body>
