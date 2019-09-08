@@ -1,0 +1,64 @@
+.work_error {
+  display: none;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+}
+.works {
+  overflow-y: hidden;
+}
+.work-img {
+  cursor: pointer;
+  margin: 20px;
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+}
+.works .work_list .first .work-img:hover {
+  height: 280px;
+  width: 280px;
+  margin: auto 5px;
+}
+.works .work_list {
+  margin: 0px;
+  display: inline-flex;
+}
+.works .work_list .first {
+  display: inline;
+  height: 300px;
+  width: 300px;
+  margin: 0px 50px;
+}
+.works .work_list .first .work-title {
+  font-size: 15px;
+  background-image: url("../../images/Transparent.png");
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.works .work_list .first .def{
+  background-image: url("../../images/Transparent.png");
+  padding: 15px;
+  margin: 20px 0px;
+}
+/* width */
+.works .work_list::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.works .work_list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+/* Handle */
+.works .work_list::-webkit-scrollbar-thumb {
+  background: tan; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.works .work_list::-webkit-scrollbar-thumb:hover {
+  background: #e3ae66; 
+}

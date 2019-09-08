@@ -15,7 +15,7 @@ class AcademicsController extends Controller
      */
     public function index()
     {
-        $acads = \DB::select('select * from academics');
+        $acads = Academics::all();
         return response()->json(['data'=>$acads,'count'=>count($acads)]);
     }
 

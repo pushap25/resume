@@ -1,0 +1,61 @@
+.proj_error {
+    display: none;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+}
+.projs {
+    overflow: hidden;
+}
+.projs .proj_list {
+    margin: 0px;
+    display: inline-flex;
+}
+.projs .proj_list .first {
+    width: 100%;
+    display: inline;
+}
+.projs .proj_list .first .proj-title {
+    font-size: 15px;
+    background-image: url("../../images/Transparent.png");
+    margin-bottom: 20px;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.projs .proj_list .first .def {
+    background-image: url("../../images/Transparent.png");
+    padding: 25px;
+    margin: auto;
+    margin-bottom: 25px;
+    width: 65%;
+    text-align: justify;
+    border-radius: 15px;
+    min-height: 65%;
+}
+.projs .proj_list .first .def:hover {
+  cursor: pointer;
+}
+
+/* width */
+.projs .proj_list::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.projs .proj_list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.projs .proj_list::-webkit-scrollbar-thumb {
+  background: tan; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.projs .proj_list::-webkit-scrollbar-thumb:hover {
+  background: #e3ae66; 
+}

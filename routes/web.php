@@ -27,4 +27,8 @@ Route::get('/skills','Front\SkillsController@index')->name('skills');
 
 Route::resource('acads','Front\AcademicsController');
 
+Route::resource('projects','Front\ProjectsController');
+
+Route::resource('work','Front\WorkExperienceController');
+
 Route::resource('message','Front\ContactsController');

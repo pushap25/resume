@@ -23,12 +23,13 @@
 	<link rel="stylesheet" href="{{asset('front/css/index.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/skills.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/academics.css')}}">
+	<link rel="stylesheet" href="{{asset('front/css/projects.css')}}">
+	<link rel="stylesheet" href="{{asset('front/css/work.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/contact.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
 
 	<script type="text/javascript">
 		function resizeWindow(){
-			event.preventDefault();
 			$('.rotater').animate({marginLeft:0});
 			$('.skills .skill_list').animate({'scrollTop':0});
 		}
@@ -127,8 +128,8 @@
 			<div class="front-bg">
 				<div class="rotater">
  					<div id="home" class="hid">@include('layouts.home')</div>
-					<div id="work" class="hid">@include('layouts.work')</div>
-					<div id="projects" class="hid">@include('layouts.projects')</div>
+					<div id="work" class="works hid">@include('layouts.work')</div>
+					<div id="projects" class="projs hid">@include('layouts.projects')</div>
 					<div id="academics" class="acads hid">@include('layouts.academics')</div>
 					<div id="skills" class="skills hid">@include('layouts.skills')</div>
  					<div id="contact" class="contact hid">@include('layouts.contact')</div>
@@ -210,6 +211,69 @@
 			},
 			error: function(xhr,status,error) {
 				$('.acad_error').show();
+			}
+		});
+
+		$.ajax({
+			url: "{{ url('/projects') }}",
+			method: 'get',
+			// data: {
+			// 	name: jQuery('#name').val(),
+			// 	type: jQuery('#type').val(),
+			// 	price: jQuery('#price').val()
+			// },
+			success: function(rs){
+				result = rs.data;
+				$('#proj_list').attr('count',rs.count);
+				$('#proj_list').css('width',rs.count+'00%');
+				for(k=0;k<result.length;k++) {
+					$('#proj_list').append(`<div class="first" id="proj_slider_`+(k+1)+`">
+												<div class="proj-title">`
+													+result[k].title+
+												`</div>
+												<div class="def">
+													<span>`
+														+result[k].description+
+													`</span>
+												</div>
+											</div>`);
+				}
+			},
+			error: function(xhr,status,error) {
+				alert('ij');
+				$('.proj_error').show();
+			}
+		});
+
+		$.ajax({
+			url: "{{ url('/work') }}",
+			method: 'get',
+			// data: {
+			// 	name: jQuery('#name').val(),
+			// 	type: jQuery('#type').val(),
+			// 	price: jQuery('#price').val()
+			// },
+			success: function(rs){
+				result = rs;
+				$('#work_list').attr('count',rs.length);
+				for(k=0;k<result.length;k++) {
+					$('#work_list').append(`<div class="first" id="work_slider_`+(k+1)+`">
+						<img class="work-img" src="`+result[k].image+`" alt="`+result[k].title+`">
+						</div>`);
+					// $('#work_list').append(`<div class="first" id="work_slider_`+(k+1)+`">
+					// 							<div class="work-title">`
+					// 								+result[k].title+
+					// 							`</div>
+					// 							<div class="def">
+					// 								<span>`
+					// 									+result[k].description+
+					// 								`</span>
+					// 							</div>
+					// 						</div>`);
+				}
+			},
+			error: function(xhr,status,error) {
+				$('.work_error').show();
 			}
 		});
 

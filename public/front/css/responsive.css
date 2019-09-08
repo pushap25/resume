@@ -1,3 +1,13 @@
+@media only screen and (max-width: 1260px) {
+	.rotater {
+		overflow-y: scroll;
+	}
+}
+@media only screen and (max-width: 1080px) {
+	.section-content .section-right form input.subject {
+		margin: 15px 0px;
+	}
+}
 @media only screen and (max-width: 1024px) {
 	.nav>li>a {
 		padding: 10px 10px;
@@ -16,25 +26,19 @@
 	.section-content .section-right form input {
 		width: 100%;
 	}
+	.works .work_list .first .work-img {
+		width: 150px;
+		height: 150px;
+	}
+	.works .work_list .first .work-img:hover {
+		width: 200px;
+		height: 200px;
+		margin: 5px;
+	}
 }
 @media only screen and (max-width: 767px) {
 	.nav>li>a {
 		padding: 10px 40px;
-	}
-}
-@media only screen and (max-width: 1080px) {
-	.section-content .section-right form input.subject {
-		margin: 15px 0px;
-	}
-}
-@media only screen and (max-height: 700px) {
-	.rotater {
-		overflow-y: scroll;
-	}
-}
-@media only screen and (max-width: 1260px) {
-	.rotater {
-		overflow-y: scroll;
 	}
 }
 @media only screen and (max-width: 520px) {
@@ -64,10 +68,23 @@
 	.acad-img {
 		width:80%;
 	}
+	.projs .proj_list .first .def {
+		min-height: auto;
+	}
+}
+@media only screen and (max-width: 426px) {
 }
 @media only screen and (max-width: 350px) {
 	.header {
 	    width: 150px;
 	    overflow: hidden;
+	}
+	.projs .proj_list .first .def {
+		width: 95%;
+	}
+}
+@media only screen and (max-height: 700px) {
+	.rotater {
+		overflow-y: scroll;
 	}
 }

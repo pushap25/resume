@@ -19,6 +19,7 @@ class CreateWorkexperienceTable extends Migration
             $table->string('designation');
             $table->mediumText('title')->nullable();
             $table->longText('description')->nullable();
+            $table->string('image');
             $table->date('from');
             $table->date('to')->nullable();
             $table->timestamps();

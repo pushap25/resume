@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Models\Skills;
+use App\Models\Projects;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SkillsController extends Controller
+class ProjectsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class SkillsController extends Controller
      */
     public function index()
     {
-        $skills = Skills::all();
-        return $skills;
+        $projs = Projects::all();
+        return response()->json(['data'=>$projs,'count'=>count($projs)]);
     }
 
     /**
@@ -43,10 +43,10 @@ class SkillsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Skills  $skills
+     * @param  \App\Models\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function show(Skills $skills)
+    public function show(Projects $projects)
     {
         //
     }
@@ -54,10 +54,10 @@ class SkillsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Skills  $skills
+     * @param  \App\Models\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function edit(Skills $skills)
+    public function edit(Projects $projects)
     {
         //
     }
@@ -66,10 +66,10 @@ class SkillsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Skills  $skills
+     * @param  \App\Models\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Skills $skills)
+    public function update(Request $request, Projects $projects)
     {
         //
     }
@@ -77,10 +77,10 @@ class SkillsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Skills  $skills
+     * @param  \App\Models\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Skills $skills)
+    public function destroy(Projects $projects)
     {
         //
     }

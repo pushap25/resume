@@ -21,7 +21,7 @@ class AcademicsTableSeeder extends Seeder
 	        ],
         	[
 	            'title' => 'IBM ICE 2018',
-	            'description' => 'Secured best project prize.',
+	            'description' => 'Secured best project prize for AI based Personal Assistant.',
 	            'images' => '/images/brothers.jpg',
 	            'videos' => '',
 	            'links' => '',

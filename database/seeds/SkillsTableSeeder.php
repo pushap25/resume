@@ -55,6 +55,10 @@ class SkillsTableSeeder extends Seeder
         	[
 	            'name' => 'AJAX',
 	            'description' => 'I have used these in all of my web based projects.',
+	        ],
+        	[
+	            'name' => 'PL/SQL',
+	            'description' => 'I having working with PL/SQL since December,2018 in TCS. Providing support and developing new packages for managing the flow of data in efficient ways.',
 	        ]
         ]);
     }
