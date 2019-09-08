@@ -73,6 +73,15 @@
 	}
 }
 @media only screen and (max-width: 426px) {
+	.home-desc {
+		display: inline-block;
+		margin: 50px auto;
+	}
+	.home-desc .btns {
+		display: block;
+		margin: auto!important;
+		margin-bottom: 20px!important;
+	}
 }
 @media only screen and (max-width: 350px) {
 	.header {

@@ -21,6 +21,7 @@
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 	<link rel="stylesheet" href="{{asset('front/css/index.css')}}">
+	<link rel="stylesheet" href="{{asset('front/css/home.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/skills.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/academics.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/projects.css')}}">
