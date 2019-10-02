@@ -259,18 +259,16 @@
 				$('#work_list').attr('count',rs.length);
 				for(k=0;k<result.length;k++) {
 					$('#work_list').append(`<div class="first" id="work_slider_`+(k+1)+`">
-						<img class="work-img" src="`+result[k].image+`" alt="`+result[k].title+`">
-						</div>`);
-					// $('#work_list').append(`<div class="first" id="work_slider_`+(k+1)+`">
-					// 							<div class="work-title">`
-					// 								+result[k].title+
-					// 							`</div>
-					// 							<div class="def">
-					// 								<span>`
-					// 									+result[k].description+
-					// 								`</span>
-					// 							</div>
-					// 						</div>`);
+												<img class="work-img" src="`+result[k].image+`" alt="`+result[k].title+`">
+												<div class="hidden">
+													<div class="work-title">`
+														+result[k].title+
+													`</div>
+													<div class="work-desc">`
+														+result[k].description+
+													`</div>
+												</div>
+											</div>`);
 				}
 			},
 			error: function(xhr,status,error) {

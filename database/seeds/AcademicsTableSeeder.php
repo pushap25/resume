@@ -15,21 +15,21 @@ class AcademicsTableSeeder extends Seeder
         	[
 	            'title' => 'IT Conclave 2016',
 	            'description' => 'Secured first position in Project Parliament for best minor project.',
-	            'images' => '/images/brothers.jpg',
+	            'images' => 'images/brothers.jpg',
 	            'videos' => '',
 	            'links' => '',
 	        ],
         	[
 	            'title' => 'IBM ICE 2018',
 	            'description' => 'Secured best project prize for AI based Personal Assistant.',
-	            'images' => '/images/brothers.jpg',
+	            'images' => 'images/brothers.jpg',
 	            'videos' => '',
 	            'links' => '',
 	        ],
         	[
 	            'title' => 'Publication',
 	            'description' => 'Automobile Monitoring Tool, International Journal of Engineering and Computer Science (JAECS) ISSN: 2319-7242 Volume 5 Issue 11 Nov.2016, Page No.19132-19134.',
-	            'images' => '/images/publication_certificate.jpg',
+	            'images' => 'images/publication_certificate.jpg',
 	            'videos' => '',
 	            'links' => '',
 	        ]
