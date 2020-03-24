@@ -241,7 +241,6 @@
 				}
 			},
 			error: function(xhr,status,error) {
-				alert('ij');
 				$('.proj_error').show();
 			}
 		});

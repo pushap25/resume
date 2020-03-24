@@ -32,3 +32,5 @@ Route::resource('projects','Front\ProjectsController');
 Route::resource('work','Front\WorkExperienceController');
 
 Route::resource('message','Front\ContactsController');
+
+Route::resource('/upload','HomeController@upload');
