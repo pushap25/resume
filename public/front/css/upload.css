@@ -1,0 +1,79 @@
+.container-fluid .front-bg .rotater {
+	display: inline-block;
+	text-align: center;
+	height: auto;
+	width: auto;
+	min-height: 230px;
+	min-width: 300px;
+	border-radius: 60%;
+	overflow-y: auto;
+	background:grey;
+	opacity: .95;
+    background-image:url('../../images/Transparent.png');
+    margin: 20px;
+}
+.container-fluid .front-bg .rotater .options .upload_btn {
+	margin: 60px 20px;
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+}
+.container-fluid .front-bg .rotater .processing_content .content .content_error {
+	display: none;
+}
+.container-fluid .front-bg .rotater .processing_content {
+	/*margin: 40px;*/
+}
+.container-fluid .front-bg .rotater .processing_content .upload_btn {
+	margin: 20px 0px 0px 20px;
+	float: left;
+	display: inline-block;
+	width: 100%;
+}
+.container-fluid .front-bg .rotater .processing_content .content .gal {
+	/*margin: 40px;*/
+	display: inline-block;
+}
+.container-fluid .front-bg .rotater .processing_content .content .gal .gal_content{
+	margin: 10px;
+	padding: 20px;
+}
+.container-fluid .front-bg .rotater .processing_content .content .gal .gal_content:hover{
+	cursor: pointer;
+	border: 2px solid grey;
+	background-color: darkgrey;
+}
+.container-fluid .front-bg .rotater .upload_btn .btn_content{
+	background: grey;
+    margin: 20px;
+    padding: 20px;
+	cursor: pointer;
+}
+.container-fluid .front-bg .rotater .upload_btn .btn_content:hover{
+	font-size: 15px;
+	margin: 10px;
+}
+.container-fluid .front-bg .rotater .processing_content .upload_btn .btn_content{
+	width: 80px;
+	padding: 10px;
+	/*margin-left: 25px;*/
+	margin: 0px;
+}
+.container-fluid .front-bg .rotater .processing_content .upload_btn .btn_content:hover{
+	font-size: 15px;
+    width: 90px;
+    height: 40px;
+    padding: 10px;
+    /*margin: 20px;*/
+    margin-left: -5px; 
+}
+.container-fluid .front-bg .rotater .processing_content {
+	display: none;
+	overflow-x: hidden;
+}
+
+/* Gallery Section CSS */
+
+.container-fluid .front-bg .rotater .processing_content .content .gal .gal_owner {
+	font-size: 10px;
+}

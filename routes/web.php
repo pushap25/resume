@@ -23,6 +23,8 @@ Route::get('/admin', 'HomeController@index')->name('home');
 
 Route::get('/register', 'HomeController@index')->name('home');
 
+Route::get('/upload','HomeController@upload')->name('upload');
+
 Route::get('/skills','Front\SkillsController@index')->name('skills');
 
 Route::resource('acads','Front\AcademicsController');
@@ -33,4 +35,5 @@ Route::resource('work','Front\WorkExperienceController');
 
 Route::resource('message','Front\ContactsController');
 
-Route::resource('/upload','HomeController@upload');
+Route::resource('download_content','Front\GalleryController');
+

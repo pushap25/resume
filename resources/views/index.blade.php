@@ -142,8 +142,8 @@
 			</div> -->
 		</div>
 		<!-- <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="pushap-saini-82598311b"></div> -->
-		@include('layouts.footer')
 	</div>
+		@include('layouts.footer')
 <script type="text/javascript" src="{{asset('front/js/index.js')}}"></script>
 <script type="text/javascript">
 	$(document).ready(function(){

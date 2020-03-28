@@ -26,7 +26,8 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function upload() {
+    public function upload()
+    {
         return view('upload');
     }
 }

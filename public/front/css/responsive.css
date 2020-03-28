@@ -71,6 +71,12 @@
 	.projs .proj_list .first .def {
 		min-height: auto;
 	}
+	.container-fluid .front-bg .rotater .upload_btn {
+		margin: 20px;
+	}
+	.container-fluid .front-bg .rotater .upload_btn:first-child {
+		margin-bottom: 0px;
+	}
 }
 @media only screen and (max-width: 426px) {
 	.home-desc {
