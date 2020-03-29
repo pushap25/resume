@@ -19,6 +19,7 @@ class CreateGalleryTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->longText('description');
+            $table->string('cover_image')->default('images\\\gallery_pic.png');
             $table->timestamps();
         });
     }

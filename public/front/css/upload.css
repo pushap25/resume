@@ -21,6 +21,9 @@
 .container-fluid .front-bg .rotater .processing_content .content .content_error {
 	display: none;
 }
+.container-fluid .front-bg .rotater .processing_content .gal_content .content_error2 {
+	display: none;
+}
 .container-fluid .front-bg .rotater .processing_content {
 	/*margin: 40px;*/
 }

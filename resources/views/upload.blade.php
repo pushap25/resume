@@ -65,12 +65,17 @@
                     </div>
                     <div class="processing_content" id="processing_content">
                         <div class="upload_btn">
-                            <div class='btn_content' id = 'back'>Back</div>
+                            <div class='btn_content' id = 'back' val = '1'>Back</div>
                         </div>
                         <div class="content" id="content">
-                                <div class="content_error">
-                                    <marquee width="80%" direction="left" height="20px">Oops, Something went wrong!!</marquee>
-                                </div>
+                            <div class="content_error">
+                                <marquee width="80%" direction="left" height="20px">Oops, Something went wrong !</marquee>
+                            </div>
+                        </div>
+                        <div class="gal_content" id="gal_content">
+                            <div class="content_error2">
+                                <marquee width="80%" direction="left" height="20px">Oops, Something went wrong !</marquee>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -79,15 +84,26 @@
     </div>
         @include('layouts.footer')
 <script type="text/javascript">
-        $('.container-fluid .front-bg .rotater .processing_content .content').ready(function(){
-            console.log('CHeck');
-        });
+        function open_gal(gal_id) {
+            $('#back').attr('val','2');
+            $('#content').hide();
+            $.ajax({
+                url: "{{ url('/gal_content/"+gal_id+"') }}",
+                method: 'get',
+                success: function(result){
+                    console.log(result);
+                },
+                error: function(xhr,status,error) {
+                    $('.content_error2').show();
+                }
+            });
+        }
     $(document).ready(function(){
         $('#upload').click(function(){
             $('.container-fluid .front-bg .rotater').css({'border-radius':'2%', 'width':'80%', 'height':'80%'});
             $('#options').hide();
             $('#processing_content').show();
-            $('#content').html('Upload Content');
+            $('#content').html('Upload Content Under Development !');
         });
         $('#download').click(function(){
             $('.container-fluid .front-bg .rotater').css({'border-radius':'2%', 'width':'80%', 'height':'80%'});
@@ -99,8 +115,11 @@
                 method: 'get',
                 success: function(result){
                     for(k=0;k<result.count;k++) {
-                        $('#content').append(`<div class="gal"><div class="gal_content"><div class="gal_img"><img height = "100px" src="`+result.cover_image+`"></div><div class="gal_title">`+result.data[k].title+`</div><div class="gal_owner">By `+result.data[k].user.name+`</div></div></div>`);
+                        $('#content').append(`<div class="gal"><div class="gal_content" id="gal_content" gal_id="`+result.data[k].id+`"><div class="gal_img"><img height = "100px" src="`+result.data[k].cover_image+`"></div><div class="gal_title">`+result.data[k].title+`</div><div class="gal_owner" id="user_id_`+result.data[k].id+`">By `+result.data[k].user.name+`</div></div></div>`);
                     }
+                    $('#gal_content').click(function(){
+                        open_gal($(this).attr('gal_id'));
+                    });
                 },
                 error: function(xhr,status,error) {
                     $('.content_error').show();
@@ -108,10 +127,16 @@
             });
         });
         $('#back').click(function(){
-            $('.container-fluid .front-bg .rotater').css({'border-radius':'60%', 'width':'auto', 'height':'auto'});
-            $('#options').show();
-            $('#processing_content').hide();
-            $('#processing_content').hide();
+            if ($('#'+this.id).attr('val') == '2') {
+                $('#content').show();
+                $('#back').attr('val','1');
+                $('.content_error2').hide();
+            } else {
+                $('.container-fluid .front-bg .rotater').css({'border-radius':'60%', 'width':'auto', 'height':'auto'});
+                $('#options').show();
+                $('#processing_content').hide();
+                $('#processing_content').hide();
+            }
         });
     });
 </script>

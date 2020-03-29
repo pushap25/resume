@@ -59,7 +59,7 @@ a.header:hover, a.header:focus {
 .footer {
 	position: fixed;
 	left: 0;
-	padding:22px 0px;
+	padding:10px 0px;
 	bottom: 0;
 	width: 100%;
 	background: white;

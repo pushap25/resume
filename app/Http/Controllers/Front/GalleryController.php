@@ -17,8 +17,7 @@ class GalleryController extends Controller
     public function index()
     {
         $gallery = Gallery::with('user')->get();
-        $cover_image = Settings::where('name','cover_image')->first()->value;
-        return response()->json(['data'=>$gallery,'count'=>count($gallery),'cover_image'=>$cover_image]);
+        return response()->json(['data'=>$gallery,'count'=>count($gallery)]);
     }
 
     /**
@@ -50,7 +49,7 @@ class GalleryController extends Controller
      */
     public function show(Gallery $gallery)
     {
-        //
+        return $gallery;
     }
 
     /**

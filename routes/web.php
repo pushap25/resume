@@ -27,6 +27,8 @@ Route::get('/upload','HomeController@upload')->name('upload');
 
 Route::get('/skills','Front\SkillsController@index')->name('skills');
 
+Route::get('/gal_content/{id}','Front\GalleryController@show')->name('gal_content');
+
 Route::resource('acads','Front\AcademicsController');
 
 Route::resource('projects','Front\ProjectsController');

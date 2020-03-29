@@ -15,7 +15,7 @@ class GalleryTableSeeder extends Seeder
         	[
         		'user_id'		=> 1,
 	            'title' 		=> 'Deoghar Trip',
-	            'description' 	=> 'This was my first ever trip with my Kolkata Flatmates.'
+	            'description' 	=> 'This was my first ever trip with my Kolkata Flatmates.',
 	        ]
         ]);
     }
