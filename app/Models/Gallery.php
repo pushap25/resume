@@ -17,4 +17,10 @@ class Gallery extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function gallerycontents()
+    {
+        return $this->hasMany('App\Models\GalleryContent','parent_id','id');
+    }
+
 }

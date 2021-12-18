@@ -43,7 +43,7 @@
 			<div class="navbar-header col-md-5">
 				<a class="navbar-brand inline-grid p-t-10 header" href="{{asset('/')}}">
 					<strong>Pushap Saini</strong>
-					<span class="f-10">An Interactive Developer With Passion Of Creativity</span>
+					<span class="f-10">An Interactive Developer with Passion for Innovation</span>
 				</a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
@@ -255,11 +255,17 @@
 			// },
 			success: function(rs){
 				result = rs;
+				slider_div = '<div class="first">';
 				$('#work_list').attr('count',rs.length);
 				for(k=0;k<result.length;k++) {
-					$('#work_list').append(`<div class="first" id="work_slider_`+(k+1)+`">
-												<img class="work-img" src="`+result[k].image+`" alt="`+result[k].title+`">
-												<div class="hidden">
+					slider_div += `<div id="work_slider_`+(k+1)+`">
+												<img class="work-img" onmouseover="show_desc('work_slider_desc_`+(k+1)+`')" src="`+result[k].image+`" alt="`+result[k].title+`">
+											</div>`;
+				}
+				slider_div += '</div><div class="second">';
+				for(k=0;k<result.length;k++) {
+					slider_div += `<div id="work_slider_desc_`+(k+1)+`">
+												<div class="hide-it">
 													<div class="work-title">`
 														+result[k].title+
 													`</div>
@@ -267,8 +273,9 @@
 														+result[k].description+
 													`</div>
 												</div>
-											</div>`);
+											</div>`;
 				}
+				$('#work_list').append(slider_div + '</div>');
 			},
 			error: function(xhr,status,error) {
 				$('.work_error').show();

@@ -54,7 +54,7 @@
     <div class="container-fluid">
         <div class="row img-container">
             <div class="front-bg">
-                <div class="rotater">
+                <div class="rotater" id="rotater">
                     <div class='options' id="options">
                         <div class="upload_btn">
                             <div class="btn_content" id = "upload">Upload</div>
@@ -72,7 +72,7 @@
                                 <marquee width="80%" direction="left" height="20px">Oops, Something went wrong !</marquee>
                             </div>
                         </div>
-                        <div class="gal_content" id="gal_content">
+                        <div class="gal_content" id="gal_contents">
                             <div class="content_error2">
                                 <marquee width="80%" direction="left" height="20px">Oops, Something went wrong !</marquee>
                             </div>
@@ -84,14 +84,45 @@
     </div>
         @include('layouts.footer')
 <script type="text/javascript">
+        var check = 1;
+        function open_pic(parent_id, pic_id) {
+            $('#rotater').fadeTo('slow',1);
+            $('#back').attr('val','3');
+            $('#gal_contents .gal').hide();
+            $('#pic_'+parent_id+'[pic_id="'+pic_id+'"]').show();
+            $('#pic_'+parent_id+'[pic_id="'+pic_id+'"] .gal_img img').css('height','350px');
+            $('#gal_contents .gal').addClass('open_pic');
+            check = 2;
+        }
+
         function open_gal(gal_id) {
             $('#back').attr('val','2');
             $('#content').hide();
+            $('#gal_contents').show();
+            $('#gal_contents').html('');
             $.ajax({
-                url: "{{ url('/gal_content/"+gal_id+"') }}",
+                url: "{{ url('/gal_content/') }}",
                 method: 'get',
+                data: {
+                    gal_id: gal_id,
+                },
                 success: function(result){
                     console.log(result);
+                    console.log(result.length);
+                    for(k=0;k<result.length;k++) {
+                        $('#gal_contents').append(`
+                            <div class="gal pic_content" parent_id="`+result[k].parent_id+`" id="pic_`+result[k].parent_id+`" pic_id="`+result[k].id+`">
+                                <div class="gal_img">
+                                    <img height = "125px" src="{{asset('/`+result[k].images+`')}}">
+                                </div>
+<!--                            <div class="gal_title">`+result[k].id+`</div>
+-->                         </div>`);
+                    }
+                    $('.pic_content').click(function(){
+                        if(check==1){
+                            open_pic($(this).attr('parent_id'), $(this).attr('pic_id'));
+                        }
+                    });
                 },
                 error: function(xhr,status,error) {
                     $('.content_error2').show();
@@ -115,7 +146,20 @@
                 method: 'get',
                 success: function(result){
                     for(k=0;k<result.count;k++) {
-                        $('#content').append(`<div class="gal"><div class="gal_content" id="gal_content" gal_id="`+result.data[k].id+`"><div class="gal_img"><img height = "100px" src="`+result.data[k].cover_image+`"></div><div class="gal_title">`+result.data[k].title+`</div><div class="gal_owner" id="user_id_`+result.data[k].id+`">By `+result.data[k].user.name+`</div></div></div>`);
+                        $('#content').append(`
+                            <div class="gal">
+                                <div class="gal_content" id="gal_content" gal_id="`+result.data[k].id+`">
+                                    <div class="gal_img">
+                                        <img height = "125px" src="{{asset('/`+result.data[k].cover_image+`')}}">
+                                    </div>
+                                    <div class="gal_title">
+                                        `+result.data[k].title+`
+                                    </div>
+                                    <div class="gal_owner" id="user_id_`+result.data[k].id+`">`+
+                                        `By `+result.data[k].user.name+`
+                                    </div>
+                                </div>
+                            </div>`);
                     }
                     $('#gal_content').click(function(){
                         open_gal($(this).attr('gal_id'));
@@ -127,7 +171,16 @@
             });
         });
         $('#back').click(function(){
-            if ($('#'+this.id).attr('val') == '2') {
+            $('#gal_contents').hide();
+            if ($('#'+this.id).attr('val') == '3') {
+                $('#rotater').fadeTo('slow',.95);
+                $('#back').attr('val','2');
+                $('#gal_contents .gal').removeClass('open_pic');
+                $('#gal_contents').show();
+                $('#gal_contents .gal').show();
+                $('#gal_contents .gal .gal_img img').css('height','125px');
+                check = 1;
+            }else if ($('#'+this.id).attr('val') == '2') {
                 $('#content').show();
                 $('#back').attr('val','1');
                 $('.content_error2').hide();

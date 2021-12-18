@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Gallery;
+use App\Models\GalleryContent;
 use App\Models\Settings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -47,9 +48,9 @@ class GalleryController extends Controller
      * @param  \App\Gallery  $gallery
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $gallery)
+    public function show(Request $request, GalleryContent $gallerycontent)
     {
-        return $gallery;
+        return $gallerycontent->whereParent_id($request->gal_id)->get();
     }
 
     /**

@@ -24,19 +24,25 @@
   margin: 0px;
   display: inline-flex;
 }
-.works .work_list .first {
+.works .work_list .first div {
   display: inline;
   height: 300px;
   width: 300px;
   margin: 0px 50px;
 }
-.works .work_list .first .work-title {
+.works .work_list .second .hide-it{
+  display: none;
+}
+.works .work_list .second #work_slider_desc_1 .hide-it{
+  display: block;
+}
+.works .work_list .second .work-title {
   font-size: 15px;
   background-image: url("../../images/Transparent.png");
   margin-bottom: 20px;
   padding: 10px;
 }
-.works .work_list .first .work-desc{
+.works .work_list .second .work-desc{
   background-image: url("../../images/Transparent.png");
   padding: 15px;
   margin: 20px 0px;

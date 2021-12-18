@@ -24,6 +24,19 @@
 .container-fluid .front-bg .rotater .processing_content .gal_content .content_error2 {
 	display: none;
 }
+.container-fluid .front-bg .rotater .processing_content .gal_content {
+	width: 100%;
+}
+.container-fluid .front-bg .rotater .processing_content .gal_content .gal {
+	display: inline-block;
+	margin: 10px;
+	padding: 20px;
+}
+.container-fluid .front-bg .rotater .processing_content .gal_content .gal:hover {
+	cursor: pointer;
+	border: 2px solid grey;
+	background-color: darkgrey;
+}
 .container-fluid .front-bg .rotater .processing_content {
 	/*margin: 40px;*/
 }
@@ -79,4 +92,9 @@
 
 .container-fluid .front-bg .rotater .processing_content .content .gal .gal_owner {
 	font-size: 10px;
+}
+.open_pic {
+	cursor: default!important;
+	border: 2px solid grey;
+	background-color: darkgrey;
 }

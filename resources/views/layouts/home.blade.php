@@ -7,11 +7,11 @@
 			<img src="{{asset('/images/pushap.jpg')}}" alt="{{ config('app.name', 'Laravel') }}">
 		</div>
 		<div class="home-img-desc">
-			I'm a a simple observer who loves to code and learn new things about technology.
+			I'm a simple observer who loves to code and learn new things about technology
 		</div>
 		<div class="home-desc">
 			<a class="btns" href="#contact"><div>Hire Me</div></a>
-			<div class="btns">Download Resume</div>
+			<div class="btns"><a href="{{asset('/resume.pdf')}}" target="_blank">Download Resume</a></div>
 		</div>
 	</div>
 </div>

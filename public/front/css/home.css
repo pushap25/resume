@@ -30,7 +30,7 @@
 .home-desc a {
 	color: #fff;
 }
-.home-desc .btns:hover {
+.home-desc .btns:hover, .home-desc .btns a:hover {
 	color: #b2b3b3;
 	background-color: #fff;
 	border-color: #b2b3b3;
