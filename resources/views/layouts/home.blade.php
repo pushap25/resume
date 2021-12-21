@@ -11,7 +11,7 @@
 		</div>
 		<div class="home-desc">
 			<a class="btns" href="#contact"><div>Hire Me</div></a>
-			<div class="btns"><a href="{{asset('/resume.pdf')}}" target="_blank">Download Resume</a></div>
+			<a class="btns" href="{{asset('/Pushap_Saini_Developer_3YOE.pdf')}}" target="_blank"><div>Download Resume</div></a>
 		</div>
 	</div>
 </div>

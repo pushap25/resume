@@ -7,7 +7,7 @@
 </div>
 <div class="section-content">
 	<div class="section-left">
-		<div class="social">
+		<!-- <div class="social">
 		    <a href="https://www.facebook.com/Pushapsaini" target="_blank">
 		      <div class="fb">
 		        <div class="two">
@@ -22,7 +22,7 @@
 		        </div>
 		      </div>
 		    </a>
-		</div>
+		</div> -->
 		<div class="social">
 		    <a href="https://www.linkedin.com/in/pushap-saini-82598311b" target="_blank">
 		      <div class="ln">

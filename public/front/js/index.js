@@ -6,6 +6,8 @@ var current3 = 1;
 function show_desc(val){
 	$('.hide-it').hide();
 	$('#'+val+' .hide-it').show();
+	$('.work-img').removeClass('hover');
+	$('#' + val.replace('desc_','') + ' .work-img').addClass('hover');
 }
 
 function rotater() {

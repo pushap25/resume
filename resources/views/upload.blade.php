@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('front/css/home.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/upload.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 </head>
 <body>
     <nav class='navbar navbar-inverse'>

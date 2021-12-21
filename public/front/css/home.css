@@ -14,8 +14,8 @@
 	width: 100%;
 	display: inline-flex;
 }
-.home-desc .btns {
-    display: inline;
+.home-desc a.btns {
+    display: inline-block;
     border: 5px #fff solid;
     padding: 10px;
     margin: auto;
@@ -23,14 +23,18 @@
 	width: 150px;
 	margin-left: 10px;
 }
-.home-desc a.btns {
-	margin: auto;
+.home-desc a.btns:nth-child(1) {
 	margin-right: 10px;
+	margin-left: auto;
+}
+.home-desc a.btns:nth-child(2) {
+	margin-left: 10px;
+	margin-right: auto;
 }
 .home-desc a {
 	color: #fff;
 }
-.home-desc .btns:hover, .home-desc .btns a:hover {
+.home-desc .btns:hover, .home-desc .btns a:hover, .home-desc .btns:hover > a {
 	color: #b2b3b3;
 	background-color: #fff;
 	border-color: #b2b3b3;

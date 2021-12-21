@@ -2,10 +2,7 @@ html, body {
 	overflow-x: hidden;
 	cursor:default;
 }
-a {
-	text-decoration: none;
-}
-a:hover {
+a, a:hover, a:focus {
 	text-decoration: none;
 }
 .inline-grid {
@@ -143,6 +140,7 @@ a.header:hover, a.header:focus {
 .rotater {
 	width: 600%;
 	height: 80%;
+	min-height: 540px;
 }
 
 /*Common CSS*/

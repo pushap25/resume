@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111020420-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-111020420-1');
+	</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +37,7 @@
 	<link rel="stylesheet" href="{{asset('front/css/work.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/contact.css')}}">
 	<link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
 	<script type="text/javascript">
 		function resizeWindow(){
@@ -45,7 +55,7 @@
 					<strong>Pushap Saini</strong>
 					<span class="f-10">An Interactive Developer with Passion for Innovation</span>
 				</a>
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<button type="button" id="navbar-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -259,7 +269,11 @@
 				$('#work_list').attr('count',rs.length);
 				for(k=0;k<result.length;k++) {
 					slider_div += `<div id="work_slider_`+(k+1)+`">
-												<img class="work-img" onmouseover="show_desc('work_slider_desc_`+(k+1)+`')" src="`+result[k].image+`" alt="`+result[k].title+`">
+												<img class="work-img`;
+					if(k==0){
+						slider_div += ` hover `;
+					}
+					slider_div += `" onmouseover="show_desc('work_slider_desc_`+(k+1)+`')" src="`+result[k].image+`" alt="`+result[k].title+`">
 											</div>`;
 				}
 				slider_div += '</div><div class="second">';
@@ -291,6 +305,7 @@
 			var pos=$(bar_clicked).offset().left-$('#home').offset().left;
 			$('.rotater').animate({'scrollTop':0,marginLeft:(-1)*pos});
 			// console.log(pos);
+			$('#navbar-toggle').click();
 		});
 	});
 

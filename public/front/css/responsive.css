@@ -1,6 +1,11 @@
 @media only screen and (max-width: 1260px) {
 	.rotater {
 		overflow-y: scroll;
+		height: ;
+	}
+	.works .work_list .first {
+	  height: 80%;
+	  overflow: scroll;
 	}
 }
 @media only screen and (max-width: 1080px) {
