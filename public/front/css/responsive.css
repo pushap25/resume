@@ -57,6 +57,8 @@
 	}
 	.section-content {
 		display: inline-block;
+	    max-height: 500px;
+	    overflow-y: scroll;
 		/*height: 850px;*/
 	}
 	.section-content .section-left {
