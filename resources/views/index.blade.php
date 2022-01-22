@@ -305,7 +305,9 @@
 			var pos=$(bar_clicked).offset().left-$('#home').offset().left;
 			$('.rotater').animate({'scrollTop':0,marginLeft:(-1)*pos});
 			// console.log(pos);
-			$('#navbar-toggle').click();
+          	if($(this).attr('class') != 'btns'){
+				$('#navbar-toggle').click();
+            }
 		});
 	});
 
